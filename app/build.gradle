@@ -4,8 +4,8 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "top.mmmrcheng.appaaa"
-        minSdkVersion 22
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,7 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    /*科大讯飞start*/
+
+    /*科大讯飞so文件处理start*/
     task nativeLibsToJar(type: Zip, description: "create a jar archive of the native libs") {
         destinationDir file("$projectDir/libs")
         baseName "so_file_Libs"
@@ -41,4 +42,5 @@ dependencies {
     implementation files('libs/Msc.jar')
     implementation files('libs/so_file_Libs.jar')
     implementation files('libs/Sunflower.jar')
+    implementation project(':openCVLibrary343')
 }
